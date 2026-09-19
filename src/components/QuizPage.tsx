@@ -1,8 +1,10 @@
 import { ArrowLeft, Check } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import { questions } from '../data/questions'
-import type { Answers } from '../types/test'
+import { questionsByLocale } from '../data/questions'
+import { uiTextByLocale } from '../data/siteContent'
+import type { Answers, Locale } from '../types/test'
 import { BrandMark } from './BrandMark'
+import { LanguageToggle } from './LanguageToggle'
 
 interface QuizPageProps {
   answers: Answers
@@ -10,12 +12,16 @@ interface QuizPageProps {
   onAnswer: (questionId: number, optionId: string) => void
   onIndexChange: (index: number) => void
   onComplete: () => void
+  locale: Locale
+  onLocaleChange: (locale: Locale) => void
 }
 
-export function QuizPage({ answers, currentIndex, onAnswer, onIndexChange, onComplete }: QuizPageProps) {
+export function QuizPage({ answers, currentIndex, onAnswer, onIndexChange, onComplete, locale, onLocaleChange }: QuizPageProps) {
   const [locked, setLocked] = useState(false)
   const lockRef = useRef(false)
   const timerRef = useRef<number | null>(null)
+  const questions = questionsByLocale[locale]
+  const text = uiTextByLocale[locale]
   const question = questions[currentIndex]
   const selected = answers[question.id]
   const progress = ((currentIndex + 1) / questions.length) * 100
@@ -51,19 +57,22 @@ export function QuizPage({ answers, currentIndex, onAnswer, onIndexChange, onCom
   return (
     <main className="app-shell flex min-h-[100svh] flex-col bg-[#f6f8f4]">
       <header className="px-5 pt-[calc(20px+env(safe-area-inset-top))]">
-        <BrandMark />
+        <div className="flex items-start justify-between gap-4">
+          <BrandMark locale={locale} />
+          <LanguageToggle locale={locale} onChange={onLocaleChange} />
+        </div>
         <div className="mt-7 flex items-end justify-between">
-          <span className="text-xs font-black uppercase text-[#789600]">公益情境测试</span>
+          <span className="text-xs font-black uppercase text-[#789600]">{text.quizLabel}</span>
           <span className="text-sm font-black tabular-nums text-[#343b2e]">{currentIndex + 1} / {questions.length}</span>
         </div>
-        <div className="mt-3 h-2 overflow-hidden rounded-full bg-[#dfe5dc]" aria-label={`答题进度 ${Math.round(progress)}%`}>
+        <div className="mt-3 h-2 overflow-hidden rounded-full bg-[#dfe5dc]" aria-label={`${text.progressLabel} ${Math.round(progress)}%`}>
           <div className="h-full rounded-full bg-[#89a707] transition-[width] duration-300" style={{ width: `${progress}%` }} />
         </div>
       </header>
 
       <section key={question.id} className="question-enter flex flex-1 flex-col px-5 pb-[calc(18px+env(safe-area-inset-bottom))] pt-9">
         <div className="mb-6">
-          {question.tieBreaker && <p className="mb-2 text-xs font-bold text-[#9a7600]">最终偏好题</p>}
+          {question.tieBreaker && <p className="mb-2 text-xs font-bold text-[#9a7600]">{text.finalPreference}</p>}
           <h1 className="text-[25px] font-black leading-[1.42] text-[#1d2416]">{question.prompt}</h1>
         </div>
 
@@ -89,7 +98,7 @@ export function QuizPage({ answers, currentIndex, onAnswer, onIndexChange, onCom
         <div className="mt-auto pt-7">
           <button className="back-button" disabled={currentIndex === 0 || locked} onClick={goBack} type="button">
             <ArrowLeft size={18} />
-            上一题
+            {text.previous}
           </button>
         </div>
       </section>

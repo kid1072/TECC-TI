@@ -1,4 +1,4 @@
-import type { Question } from '../types/test'
+import type { Locale, Question } from '../types/test'
 
 export const questions: Question[] = [
   {
@@ -120,3 +120,129 @@ export const questions: Question[] = [
     ],
   },
 ]
+
+const englishQuestions: Question[] = [
+  {
+    id: 1,
+    prompt: 'You have a completely free weekend. How would you most like to spend it?',
+    options: [
+      { id: 'A', label: 'Write a long letter to a child far away, sharing a recent book and one happy moment.', score: 'ME' },
+      { id: 'B', label: 'Take a camera through old neighborhoods and document traditions and stories that may soon disappear.', score: 'CH' },
+      { id: 'C', label: 'Join an accessibility walk, navigate downtown in a wheelchair, and note what still needs improvement.', score: 'HF' },
+      { id: 'D', label: 'Sign up for an intangible cultural heritage workshop and make a traditional craft by hand.', score: 'CH' },
+    ],
+  },
+  {
+    id: 2,
+    prompt: 'A friend sends a voice message saying, “I feel a little down today.” How would you respond?',
+    options: [
+      { id: 'A', label: 'Call right away and stay with them until they feel better.', score: 'ME' },
+      { id: 'B', label: 'Send a funny video and invite them for a walk in the park this weekend.', score: 'HF' },
+      { id: 'C', label: 'Share a story about someone in history who made it through a similar time.', score: 'CH' },
+      { id: 'D', label: 'Keep it in mind, then bring them a small gift or handwritten card the next day.', score: 'ME' },
+    ],
+  },
+  {
+    id: 3,
+    prompt: 'Which role would you rather take in a team?',
+    options: [
+      { id: 'A', label: 'The planner: design the event flow and keep every part running smoothly.', score: 'HF' },
+      { id: 'B', label: 'The documentarian: turn the team’s ideas and activities into stories or images.', score: 'CH' },
+      { id: 'C', label: 'The companion: build long-term, one-on-one trust with the people you serve.', score: 'ME' },
+      { id: 'D', label: 'The advocate: speak publicly and bring more attention to the issue.', score: 'HF' },
+    ],
+  },
+  {
+    id: 4,
+    prompt: 'When you encounter a social issue, what do you do first?',
+    options: [
+      { id: 'A', label: 'Visit the place, experience it firsthand, and document what is really happening.', score: 'HF' },
+      { id: 'B', label: 'Research its historical and cultural background.', score: 'CH' },
+      { id: 'C', label: 'Talk with the people involved and listen to their stories and needs.', score: 'ME' },
+      { id: 'D', label: 'Think about how a sustainable program could address it.', score: 'HF' },
+    ],
+  },
+  {
+    id: 5,
+    prompt: 'Which activity would make you feel most involved?',
+    options: [
+      { id: 'A', label: 'Record an audiobook for blind children and bring the story to life with your voice.', score: 'HF' },
+      { id: 'B', label: 'Help migrant children in the city draw a star with code.', score: 'ME' },
+      { id: 'C', label: 'Host a campus fair together with older adults living with dementia.', score: 'HF' },
+      { id: 'D', label: 'Join an accessible role-playing mystery set in Fudan’s history.', score: 'HF' },
+    ],
+  },
+  {
+    id: 6,
+    prompt: 'Which statement speaks to you most?',
+    options: [
+      { id: 'A', label: '“Every child deserves to be seen.”', score: 'ME' },
+      { id: 'B', label: '“Anyone can experience disability, so accessibility concerns everyone.”', score: 'HF' },
+      { id: 'C', label: '“Culture lives on because someone remembers.”', score: 'CH' },
+    ],
+  },
+  {
+    id: 7,
+    prompt: 'If you could commit to one program long-term, which would you choose?',
+    options: [
+      { id: 'A', label: 'Blue Letter Project: exchange one-on-one letters with a child in rural China.', score: 'ME' },
+      { id: 'B', label: 'Unfallen Flight: experience wheelchair travel and create an accessible city guide.', score: 'HF' },
+      { id: 'C', label: 'Listening to Craft: interview heritage artisans and record their oral histories.', score: 'CH' },
+      { id: 'D', label: 'Aging Together: accompany older adults with dementia in creating memory books.', score: 'HF' },
+    ],
+  },
+  {
+    id: 8,
+    prompt: 'Which form of communication suits you best?',
+    options: [
+      { id: 'A', label: 'Writing letters, stories, and campaign copy.', score: 'ME' },
+      { id: 'B', label: 'Face-to-face conversation, listening, and companionship.', score: 'ME' },
+      { id: 'C', label: 'Using your voice through recording and narration.', score: 'HF' },
+      { id: 'D', label: 'Documenting through photography and video editing.', score: 'CH' },
+    ],
+  },
+  {
+    id: 9,
+    prompt: 'Which skill would you most like to have?',
+    options: [
+      { id: 'A', label: 'Write vivid audio descriptions that help blind audiences “see” a film.', score: 'HF' },
+      { id: 'B', label: 'Design engaging lessons that make rural children excited to learn.', score: 'ME' },
+      { id: 'C', label: 'Interview artisans and preserve their memories through oral history.', score: 'CH' },
+      { id: 'D', label: 'Plan an inclusive event where people with different abilities have fun together.', score: 'HF' },
+    ],
+  },
+  {
+    id: 10,
+    prompt: 'Which moment would give you the strongest sense of achievement?',
+    options: [
+      { id: 'A', label: 'A child says, “Because of you, I want to go to university.”', score: 'ME' },
+      { id: 'B', label: 'A blind friend says, “This is the first time I truly ‘saw’ a film.”', score: 'HF' },
+      { id: 'C', label: 'An elder says, “Thank you for helping young people discover our craft.”', score: 'CH' },
+      { id: 'D', label: 'An older adult with dementia says, “I remember you and the memory book we made.”', score: 'HF' },
+    ],
+  },
+  {
+    id: 11,
+    prompt: 'Which social issue would you most like to explore?',
+    options: [
+      { id: 'A', label: 'Unequal access to education and the growth of rural children.', score: 'ME' },
+      { id: 'B', label: 'Accessible environments and disability rights.', score: 'HF' },
+      { id: 'C', label: 'Intangible heritage and the cultural memory of cities.', score: 'CH' },
+    ],
+  },
+  {
+    id: 12,
+    prompt: 'Finally, choose your declaration of service:',
+    tieBreaker: true,
+    options: [
+      { id: 'A', label: '“Every child deserves to be seen, and every dream deserves support.”', score: 'ME' },
+      { id: 'B', label: '“Anyone can experience disability, so accessibility concerns everyone.”', score: 'HF' },
+      { id: 'C', label: '“Culture lives because someone remembers, records, and passes it on.”', score: 'CH' },
+    ],
+  },
+]
+
+export const questionsByLocale: Record<Locale, Question[]> = {
+  zh: questions,
+  en: englishQuestions,
+}

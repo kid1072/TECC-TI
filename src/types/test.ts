@@ -1,5 +1,9 @@
 export const personalityCodes = ['ME', 'HF', 'CH'] as const
 
+export const locales = ['zh', 'en'] as const
+
+export type Locale = (typeof locales)[number]
+
 export type PersonalityCode = (typeof personalityCodes)[number]
 
 export interface AnswerOption {

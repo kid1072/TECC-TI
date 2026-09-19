@@ -5,6 +5,7 @@ TECC Type Indicator 是复旦 TECC 招新期间使用的移动端公益人格互
 ## 功能
 
 - 移动端优先的首页、12 道单题答题、计算过渡和结果页
+- 全站中英文切换，语言偏好独立保存在当前浏览器
 - ME / HF / CH 确定性计分及第 12 题平票裁决
 - 刷新后恢复答题位置，支持返回修改答案
 - 本次测试倾向百分比与完整部门、项目推荐
@@ -31,12 +32,13 @@ npm run preview
 
 ## 内容与配置
 
-- `src/data/questions.ts`：12 道题、选项和原始计分映射
-- `src/data/results.ts`：人格、部门、项目、口号、颜色和插画路径
-- `src/data/siteContent.ts`：首页名称、介绍、宣传语和免责声明
+- `src/data/questions.ts`：中英文 12 道题、选项和原始计分映射
+- `src/data/results.ts`：中英文人格、部门、项目、口号、颜色和插画路径
+- `src/data/siteContent.ts`：中英文首页文案、界面文案和海报文案
 - `src/config/siteConfig.ts`：三类人格的招新推送链接、Logo、二维码和分享地址
 - `src/data/suggestedScoring.ts`：不参与运行的建议修改版计分表
 - `src/lib/scoring.ts`：计分、平票裁决和百分比归一化
+- `src/lib/language.ts`：语言偏好的读取与保存
 
 `recruitmentUrls.ME/HF/CH` 分别控制三类人格结果页的招新推送按钮。某一项保持空字符串时，对应结果页会自动隐藏该按钮。
 

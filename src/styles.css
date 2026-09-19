@@ -36,6 +36,49 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+.language-toggle {
+  display: flex;
+  height: 34px;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #cad2c7;
+  border-radius: 6px;
+  background: rgb(255 255 255 / 82%);
+  padding: 3px 5px;
+  color: #4d5748;
+}
+
+.language-toggle button {
+  min-width: 27px;
+  height: 26px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  font-size: 10px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.language-toggle button[aria-pressed="true"] {
+  background: #ffca00;
+  color: #252d12;
+}
+
+.language-toggle > span {
+  width: 1px;
+  height: 14px;
+  background: currentColor;
+  opacity: 0.25;
+}
+
+.language-toggle--inverted {
+  border-color: rgb(255 255 255 / 45%);
+  background: rgb(36 48 17 / 18%);
+  color: white;
+}
+
 .app-shell {
   width: 100%;
   max-width: 480px;
@@ -549,6 +592,56 @@ a:focus-visible {
   flex: 0 0 auto;
   font-size: 7.5px;
   white-space: nowrap;
+}
+
+.poster-card--en {
+  font-family: Inter, Arial, sans-serif;
+}
+
+.poster-card--en h2 {
+  top: 95px;
+  width: 250px;
+  font-size: 29px;
+  letter-spacing: 0;
+}
+
+.poster-card--en .poster-tag {
+  top: 132px;
+  width: 230px;
+  font-size: 9.5px;
+}
+
+.poster-card--en .poster-copy {
+  top: 168px;
+}
+
+.poster-card--en .poster-copy p {
+  font-size: 7.6px;
+  line-height: 1.55;
+}
+
+.poster-card--en .poster-motto strong {
+  font-size: 8.5px;
+}
+
+.poster-card--en .poster-info div {
+  grid-template-columns: 76px 1fr;
+}
+
+.poster-card--en .poster-info span {
+  font-size: 6.8px;
+}
+
+.poster-card--en .poster-info strong {
+  font-size: 7.2px;
+}
+
+.poster-card--en .poster-footer span {
+  font-size: 8.5px;
+}
+
+.poster-card--en .poster-footer strong {
+  font-size: 6.7px;
 }
 
 @media (prefers-reduced-motion: reduce) {

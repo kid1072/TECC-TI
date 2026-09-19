@@ -1,4 +1,4 @@
-import type { PersonalityCode, PersonalityResult } from '../types/test'
+import type { Locale, PersonalityCode, PersonalityResult } from '../types/test'
 
 export const results: Record<PersonalityCode, PersonalityResult> = {
   ME: {
@@ -58,4 +58,69 @@ export const results: Record<PersonalityCode, PersonalityResult> = {
       { name: '文物回眸', description: '让沉睡的文物开口说话。' },
     ],
   },
+}
+
+const englishResults: Record<PersonalityCode, PersonalityResult> = {
+  ME: {
+    code: 'ME',
+    name: 'Sunshine Soul',
+    tag: 'Care Educator / Companion at Heart',
+    department: 'ME · Care & Education',
+    description: 'You believe education begins when one life reaches another. With patience and warmth, you help every young person feel seen and supported as they grow.',
+    slogan: 'Let every step of growth be seen, and every act of care arrive with warmth.',
+    accent: '#2d8fbd',
+    tint: '#dceffc',
+    artwork: './assets/me-art.png',
+    projects: [
+      { name: 'Blue Letter Project', code: 'BLP', description: 'Exchange one-on-one letters with rural children and build a bridge between different lives through writing.' },
+      { name: 'Sunshine Classroom', code: 'SC', description: 'Provide online tutoring and emotional support to students whose studies are affected by rare diseases.' },
+      { name: 'E Buddy Online Companionship', code: 'EB', description: 'Partner with schools in Henan, Guangdong, and beyond for eight weeks of online companionship.' },
+      { name: 'Paving Stones Youth Support', description: 'Design language, creative coding, and digital literacy classes for migrant children in cities.' },
+      { name: 'Nebula Online Teaching', code: 'SD', description: 'Teach online ethnic-culture courses and explore rainforest conservation and Dai villages.' },
+      { name: 'On-site Learning Camp', code: 'DEC', description: 'Guide middle school students through project-based exploration and learning.' },
+      { name: 'Love & Life Education', code: 'LLE', description: 'Create courses on life and body, gender equality, and diverse paths of growth.' },
+      { name: 'Education for Blind Students', description: 'Build technology literacy and well-being while using AI to break visual barriers.' },
+      { name: 'Anyang Education Program', description: 'Work with a middle school in Anyang, Henan, on interest-based courses and student exchange.' },
+    ],
+  },
+  HF: {
+    code: 'HF',
+    name: 'Access Hero',
+    tag: 'Inclusion Builder / Action-first Changemaker',
+    department: 'HF · Disability Inclusion',
+    description: 'You see disability as one of many ways to experience life. Attentive and action-oriented, you remove barriers so every person can move, connect, and thrive freely.',
+    slogan: 'Move accessibility forward. Make everyone the protagonist.',
+    accent: '#789600',
+    tint: '#e6edc3',
+    artwork: './assets/hf-art.png',
+    projects: [
+      { name: 'Unfallen Flight', code: 'UF', description: 'Experience wheelchair travel firsthand and create accessible citywalk guides.' },
+      { name: 'Aging Together', code: 'AT', description: 'Support older adults with dementia and their caregivers through home visits, campus fairs, and mutual-aid gatherings.' },
+      { name: 'Echoes of Light', code: 'EL', description: 'Join blind-companion travel, audiobooks, accessible cinema, concerts, and inclusive role-playing mysteries.' },
+      { name: 'Moss Flower Wishes', code: 'CPR', description: 'Support community rehabilitation and social inclusion for people living with mental health conditions.' },
+    ],
+  },
+  CH: {
+    code: 'CH',
+    name: 'Culture Keeper',
+    tag: 'Heritage Steward / Story Collector',
+    department: 'CH · Cultural Heritage',
+    description: 'You know culture is not a museum specimen but a living part of everyday life. You uncover stories, document craft, and help tradition speak to a new generation.',
+    slogan: 'Culture lives on because someone remembers.',
+    accent: '#e39100',
+    tint: '#fff0b8',
+    artwork: './assets/ch-art.png',
+    projects: [
+      { name: 'Listening to Craft', description: 'Interview heritage artisans and document the stories and skills behind their work.' },
+      { name: 'Heritage Workshop', description: 'Make traditional crafts by hand and experience living heritage up close.' },
+      { name: 'Folk Culture Notes', description: 'Record local traditions hidden in the corners of the city through images and writing.' },
+      { name: 'Urban Heritage Explorer', description: 'Discover cultural landmarks and the memories held by the city.' },
+      { name: 'Artifacts Revisited', description: 'Give historic objects a voice and bring their stories back into the present.' },
+    ],
+  },
+}
+
+export const resultsByLocale: Record<Locale, Record<PersonalityCode, PersonalityResult>> = {
+  zh: results,
+  en: englishResults,
 }
