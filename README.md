@@ -44,8 +44,8 @@ npm run preview
 
 1. 在 GitHub 新建仓库，建议仓库名为 `tecc-ti`。
 2. 将本目录提交并推送到 `main` 分支。
-3. 在仓库 `Settings > Pages > Build and deployment` 中选择 `GitHub Actions`。
-4. 推送后 `.github/workflows/deploy.yml` 会执行检查、构建并发布。
+3. 推送后 `.github/workflows/deploy.yml` 会尝试自动启用 Pages，执行检查、构建并发布。
+4. 如果仓库或组织策略禁止自动启用，请在 `Settings > Pages > Build and deployment` 中手动选择 `GitHub Actions`，再重新运行工作流。
 
 项目采用相对资源路径，因此仓库页地址和自定义域名都可直接使用。仓库名为 `tecc-ti` 时，默认网址形式为：
 
@@ -53,7 +53,7 @@ npm run preview
 https://<GitHub用户名>.github.io/tecc-ti/
 ```
 
-启用 Pages 和首次确认仓库权限需要仓库所有者本人在 GitHub 完成。
+如果 GitHub 拒绝工作流自动启用 Pages，首次确认仓库权限需要仓库所有者本人完成。
 
 ## 其他静态托管
 
