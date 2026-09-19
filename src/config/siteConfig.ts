@@ -6,6 +6,6 @@ export const siteConfig = {
   },
   logoUrl: './assets/tecc-logo.jpg',
   officialQrUrl: '',
-  recruitmentQrUrl: '',
+  recruitmentQrUrl: './assets/recruitment-qr.jpg',
   shareUrl: '',
 } as const

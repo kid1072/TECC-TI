@@ -29,6 +29,18 @@ export const PosterCard = forwardRef<HTMLDivElement, PosterCardProps>(function P
         <p>{result.description}</p>
       </div>
 
+      <div className="poster-motto" style={{ borderColor: result.accent }}>
+        <span>招新口号</span>
+        <strong style={{ color: result.accent }}>{result.slogan}</strong>
+      </div>
+
+      {siteConfig.recruitmentQrUrl && (
+        <div className="poster-qr">
+          <img src={siteConfig.recruitmentQrUrl} alt="" />
+          <span>扫码填写招新问卷</span>
+        </div>
+      )}
+
       <div className="poster-info">
         <div>
           <span>匹配部门</span>

@@ -35,6 +35,7 @@ def remove_background(image: Image.Image, background: tuple[int, int, int]) -> I
 def main() -> None:
     OUTPUT.mkdir(parents=True, exist_ok=True)
     shutil.copy2(SOURCE / "拓客logo.jpg", OUTPUT / "tecc-logo.jpg")
+    shutil.copy2(SOURCE / "TECC招新问卷.jpg", OUTPUT / "recruitment-qr.jpg")
 
     for output_name, (source_name, box) in CROPS.items():
         with Image.open(SOURCE / source_name) as source:
