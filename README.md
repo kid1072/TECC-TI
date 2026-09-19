@@ -42,6 +42,14 @@ npm run preview
 
 `recruitmentUrls.ME/HF/CH` 分别控制三类人格结果页的招新推送按钮。某一项保持空字符串时，对应结果页会自动隐藏该按钮。
 
+## 宣传二维码
+
+正式网址二维码位于 `figures/TECC-TI-网址二维码.png` 和 `figures/TECC-TI-网址二维码.svg`。PNG 适合直接用于推送和图片物料，SVG 适合印刷和大尺寸展板。网址变化后可重新运行：
+
+```bash
+python scripts/generate_site_qr.py
+```
+
 ## GitHub Pages 部署
 
 1. 在 GitHub 新建仓库，建议仓库名为 `tecc-ti`。
